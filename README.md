@@ -7,11 +7,11 @@
 ```
 WebStation-G1/
 ├── index.html          首页（组长）
-├── page/               8 张子网页，每人 2 张
-│   ├── spring.html  qingming.html   张三（春）
-│   ├── summer.html  xiazhi.html     李四（夏）
-│   ├── autumn.html  qiufen.html     王五（秋）
-│   └── winter.html  dongzhi.html    赵六（冬）
+├── page/               8 张子网页（组长 4 张，组员各 2 张）
+│   ├── spring.html  qingming.html   江隽知（春）
+│   ├── summer.html  xiazhi.html     刘丰（夏）
+│   ├── autumn.html  qiufen.html     王廉辰（秋）
+│   └── winter.html  dongzhi.html    江隽知（冬）
 ├── css/style.css       公共外部样式
 ├── js/main.js          显示日期/当前节气、表单提示（约 80 行）
 ├── image/              9 张 SVG 插画
@@ -24,9 +24,7 @@ WebStation-G1/
 
 | 要改的 | 位置 |
 |---|---|
-| 小组编号 `G1` | 文件夹名 `WebStation-G1`、所有页面页脚、首页“关于我们” |
-| 组名“拾光小组”、专业班级 | 所有页面页脚、首页“关于我们” |
-| 学号 `202500000X` 与姓名 张三/李四/王五/赵六 | 每页的 `<title>`、“本页制作人”表格、页脚、报告下载链接、首页成员表 |
+| 小组编号 `G1`（待老师分配） | 文件夹名 `WebStation-G1`、所有页面页脚、首页“关于我们” |
 | 报告 PDF | 用自己的报告替换 `document/学号姓名.pdf`，文件名要与链接一致 |
 
 建议用 VSCode 的“在文件夹中替换”（Ctrl+Shift+H）批量替换。
