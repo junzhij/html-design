@@ -14,7 +14,7 @@ WebStation-G1/
 │   └── winter.html  dongzhi.html    江隽知（冬）
 ├── css/style.css       公共外部样式
 ├── js/main.js          显示日期/当前节气、表单提示（约 80 行）
-├── image/              9 张 SVG 插画
+├── image/              9 张 JPG 图片（AI 生成）
 ├── audio/sishi.wav     首页背景小曲
 ├── video/              （空，可自行添加）
 └── document/           个人报告 PDF（目前为占位文件）
