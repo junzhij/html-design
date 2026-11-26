@@ -1,11 +1,11 @@
 # 节气手帖 · 大学计算机基础综合设计网站
 
-主题：二十四节气（资讯/博客类）。网站文件夹：`WebStation-G1/`，双击 `index.html` 即可离线浏览。
+主题：二十四节气（资讯/博客类）。网站文件夹：`WebStation-G21/`，双击 `index.html` 即可离线浏览。
 
 ## 文件结构
 
 ```
-WebStation-G1/
+WebStation-G21/
 ├── index.html          首页（组长）
 ├── page/               8 张子网页（组长 4 张，组员各 2 张）
 │   ├── spring.html  qingming.html   江隽知（春）
@@ -24,7 +24,7 @@ WebStation-G1/
 
 | 要改的 | 位置 |
 |---|---|
-| 小组编号 `G1`（待老师分配） | 文件夹名 `WebStation-G1`、所有页面页脚、首页“关于我们” |
+| 小组编号 `G21` | 文件夹名 `WebStation-G21`、所有页面页脚、首页“关于我们” |
 | 报告 PDF | 用自己的报告替换 `document/学号姓名.pdf`，文件名要与链接一致 |
 
 建议用 VSCode 的“在文件夹中替换”（Ctrl+Shift+H）批量替换。
