@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <radialGradient id="sun"><stop offset="0" stop-color="#f6c75b"/><stop offset=".55" stop-color="#f2b347"/><stop offset="1" stop-color="#f2b347" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="#f3f1e4"/>
+  <circle cx="400" cy="90" r="110" fill="url(#sun)"/>
+  <circle cx="400" cy="90" r="46" fill="#e9a23a"/>
+  <path d="M400 150 V340" stroke="#2c2a26" stroke-width="2" stroke-dasharray="5 6" opacity=".4"/>
+  <path d="M0 340 H800 V450 H0Z" fill="#cfe0c9"/>
+  <path d="M0 340 C200 330 600 330 800 340" stroke="#3a8a74" stroke-width="3" fill="none"/>
+  <rect x="394" y="230" width="12" height="110" fill="#4a3b35"/>
+  <ellipse cx="400" cy="342" rx="12" ry="3" fill="#2c2a26" opacity=".5"/>
+  <g fill="#3a8a74">
+    <path d="M100 340 c5 -40 15 -60 30 -70 c-5 25 -10 45 -15 70z"/>
+    <path d="M130 340 c0 -30 -10 -50 -25 -60 c10 25 12 40 12 60z"/>
+    <path d="M660 340 c5 -40 15 -60 30 -70 c-5 25 -10 45 -15 70z"/>
+    <path d="M690 340 c0 -30 -10 -50 -25 -60 c10 25 12 40 12 60z"/>
+  </g>
+  <g fill="#4a3b35" transform="translate(600 150)">
+    <ellipse rx="10" ry="18"/>
+    <ellipse cx="-14" cy="-2" rx="16" ry="6" fill="#bcd3e0" opacity=".85" transform="rotate(25)"/>
+    <ellipse cx="14" cy="-2" rx="16" ry="6" fill="#bcd3e0" opacity=".85" transform="rotate(-25)"/>
+  </g>
+</svg>

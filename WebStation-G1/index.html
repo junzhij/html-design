@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025000001张三</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- 内部 CSS：只对本页生效的样式 -->
+  <style>
+    /* 首页横幅 */
+    .hero { position: relative; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+    .hero img { width: 100%; }
+    .hero-text { position: absolute; left: 6%; top: 50%; transform: translateY(-50%); }
+    .hero-text small { letter-spacing: 6px; color: var(--ink-light); }
+    #current-term { font-family: "Songti SC", "STSong", "SimSun", serif; font-size: 72px; letter-spacing: 12px; margin: 0; line-height: 1.2; }
+    .hero-text p { margin: 6px 0 0; color: var(--ink-light); letter-spacing: 3px; }
+
+    /* 四季卡片 */
+    .season-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .season-card { background-color: #fffdf8; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+    .season-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(80, 60, 30, 0.12); }
+    .season-card img { transition: transform 0.6s; }
+    .season-card:hover img { transform: scale(1.05); }
+    .season-text { padding: 18px 22px 22px; }
+    .season-text h3 { margin: 0 0 6px; font-size: 22px; color: var(--accent); }
+    .season-text p { margin: 0 0 14px; color: var(--ink-light); }
+
+    /* 节气一览表 */
+    .term-grid td { font-family: "Songti SC", "STSong", "SimSun", serif; font-size: 18px; }
+    .term-grid small { display: block; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 12px; color: var(--ink-light); }
+    .term-grid th a { display: inline-block; width: 40px; height: 40px; line-height: 40px; border-radius: 50%; color: #fff; font-size: 18px; }
+    .row-spring th a { background-color: #c0607a; }
+    .row-summer th a { background-color: #3a8a74; }
+    .row-autumn th a { background-color: #b9812a; }
+    .row-winter th a { background-color: #48678a; }
+
+    /* 两栏 */
+    .two-col { display: grid; grid-template-columns: 3fr 2fr; gap: 32px; }
+    .news { list-style: none; padding: 0; margin: 0; }
+    .news li { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed var(--line); }
+    .news span { color: var(--ink-light); font-size: 14px; }
+    audio { width: 100%; margin-top: 8px; }
+    .group-info { display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 0; list-style: none; margin: 0 0 20px; }
+    .group-info b { color: var(--seal); }
+
+    @media (max-width: 760px) {
+      .season-grid, .two-col { grid-template-columns: 1fr; }
+      #current-term { font-size: 40px; }
+      .hero-text p { display: none; }
+      .term-grid td { font-size: 14px; padding: 6px 2px; }
+    }
+  </style>
+</head>
+<body class="home" id="top">
+  <!-- ========== 标题区 ========== -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <div class="seal">节气<br>手帖</div>
+        <div>
+          <h1>节气手帖</h1>
+          <p>二十四节气 · 资讯博客</p>
+        </div>
+      </a>
+      <div class="today" id="today">今日</div>
+    </div>
+  </header>
+
+  <!-- ========== 导航区 ========== -->
+  <nav class="site-nav">
+    <ul class="wrap">
+        <li><a href="index.html" class="active">首页</a></li>
+        <li><a href="page/spring.html">春 · 生</a></li>
+        <li><a href="page/summer.html">夏 · 长</a></li>
+        <li><a href="page/autumn.html">秋 · 收</a></li>
+        <li><a href="page/winter.html">冬 · 藏</a></li>
+        <li><a href="index.html#about">关于我们</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== 内容区 ========== -->
+  <main class="wrap">
+
+    <!-- 横幅 -->
+    <section class="hero">
+      <img src="image/hero.svg" alt="远山与红日">
+      <div class="hero-text">
+        <small>当 下 节 气</small>
+        <h2 id="current-term">节气</h2>
+        <p>春雨惊春清谷天，夏满芒夏暑相连。</p>
+        <p>秋处露秋寒霜降，冬雪雪冬小大寒。</p>
+      </div>
+    </section>
+
+    <!-- 网站简介 -->
+    <section>
+      <div class="section-title"><h2>关于节气</h2><span>About Solar Terms</span></div>
+      <p style="text-indent: 2em;">二十四节气是我国古人通过观察太阳周年运动而形成的时间知识体系，用来指导农事、安排生活。2016 年 11 月，“二十四节气”被列入联合国教科文组织<strong>人类非物质文化遗产代表作名录</strong>。</p>
+      <p style="text-indent: 2em;">“节气手帖”是一个关于二十四节气的资讯博客。我们把一年分为春、夏、秋、冬四卷，每卷介绍六个节气的含义与物候，并精选一个节气做专题解读。</p>
+    </section>
+
+    <!-- 四季入口 -->
+    <section>
+      <div class="section-title"><h2>四时之卷</h2><span>Four Seasons</span></div>
+      <div class="season-grid">
+      <div class="season-card spring">
+        <a href="page/spring.html"><img src="image/spring.svg" alt="春季插图"></a>
+        <div class="season-text">
+          <h3>春 · 生</h3>
+          <p>东风解冻，草木萌动。从立春到谷雨，看万物如何苏醒。</p>
+          <a class="btn" href="page/spring.html">春之卷</a>
+          <a class="btn" href="page/qingming.html">专题 · 清明</a>
+        </div>
+      </div>
+      <div class="season-card summer">
+        <a href="page/summer.html"><img src="image/summer.svg" alt="夏季插图"></a>
+        <div class="season-text">
+          <h3>夏 · 长</h3>
+          <p>日长至极，万物繁茂。从立夏到大暑，感受最热烈的季节。</p>
+          <a class="btn" href="page/summer.html">夏之卷</a>
+          <a class="btn" href="page/xiazhi.html">专题 · 夏至</a>
+        </div>
+      </div>
+      <div class="season-card autumn">
+        <a href="page/autumn.html"><img src="image/autumn.svg" alt="秋季插图"></a>
+        <div class="season-text">
+          <h3>秋 · 收</h3>
+          <p>天高云淡，稻谷金黄。从立秋到霜降，一起分享收获。</p>
+          <a class="btn" href="page/autumn.html">秋之卷</a>
+          <a class="btn" href="page/qiufen.html">专题 · 秋分</a>
+        </div>
+      </div>
+      <div class="season-card winter">
+        <a href="page/winter.html"><img src="image/winter.svg" alt="冬季插图"></a>
+        <div class="season-text">
+          <h3>冬 · 藏</h3>
+          <p>天寒地冻，万物闭藏。从立冬到大寒，静待春天的到来。</p>
+          <a class="btn" href="page/winter.html">冬之卷</a>
+          <a class="btn" href="page/dongzhi.html">专题 · 冬至</a>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- 二十四节气一览 -->
+    <section>
+      <div class="section-title"><h2>二十四节气一览</h2><span>24 Solar Terms</span></div>
+      <table class="term-grid">
+        <caption>表：二十四节气及其大致公历日期（每年可能相差一两天）</caption>
+    <tr class="row-spring">
+      <th><a href="page/spring.html">春</a></th>
+      <td>立春<small>2月3日前后</small></td>
+      <td>雨水<small>2月18日前后</small></td>
+      <td>惊蛰<small>3月5日前后</small></td>
+      <td>春分<small>3月20日前后</small></td>
+      <td>清明<small>4月4日前后</small></td>
+      <td>谷雨<small>4月19日前后</small></td>
+    </tr>
+    <tr class="row-summer">
+      <th><a href="page/summer.html">夏</a></th>
+      <td>立夏<small>5月5日前后</small></td>
+      <td>小满<small>5月20日前后</small></td>
+      <td>芒种<small>6月5日前后</small></td>
+      <td>夏至<small>6月21日前后</small></td>
+      <td>小暑<small>7月6日前后</small></td>
+      <td>大暑<small>7月22日前后</small></td>
+    </tr>
+    <tr class="row-autumn">
+      <th><a href="page/autumn.html">秋</a></th>
+      <td>立秋<small>8月7日前后</small></td>
+      <td>处暑<small>8月22日前后</small></td>
+      <td>白露<small>9月7日前后</small></td>
+      <td>秋分<small>9月22日前后</small></td>
+      <td>寒露<small>10月8日前后</small></td>
+      <td>霜降<small>10月23日前后</small></td>
+    </tr>
+    <tr class="row-winter">
+      <th><a href="page/winter.html">冬</a></th>
+      <td>立冬<small>11月7日前后</small></td>
+      <td>小雪<small>11月22日前后</small></td>
+      <td>大雪<small>12月6日前后</small></td>
+      <td>冬至<small>12月21日前后</small></td>
+      <td>小寒<small>1月5日前后</small></td>
+      <td>大寒<small>1月20日前后</small></td>
+    </tr>
+      </table>
+    </section>
+
+    <!-- 最新文章 + 四时之音 -->
+    <section class="two-col">
+      <div>
+        <div class="section-title"><h2>最新文章</h2><span>Latest</span></div>
+        <ul class="news">
+          <li><a href="page/dongzhi.html">冬至大如年：饺子、汤圆与九九消寒图</a><span>赵六</span></li>
+          <li><a href="page/qiufen.html">秋分：昼夜平分，五谷丰登</a><span>王五</span></li>
+          <li><a href="page/xiazhi.html">夏至：一年中白天最长的一天</a><span>李四</span></li>
+          <li><a href="page/qingming.html">清明：气清景明，万物皆显</a><span>张三</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-title"><h2>四时之音</h2><span>Listen</span></div>
+        <div class="card">
+          <h3>一段五声音阶小曲</h3>
+          <p style="margin: 0;">用“宫商角徵羽”五声音阶写成的小旋律，适合配着节气文章慢慢阅读。</p>
+          <audio controls src="audio/sishi.wav">你的浏览器不支持音频播放。</audio>
+        </div>
+      </div>
+    </section>
+
+    <!-- 小组信息 -->
+    <section id="about">
+      <div class="section-title"><h2>关于我们</h2><span>About Us</span></div>
+      <ul class="group-info">
+        <li>小组名称：<b>拾光小组</b></li>
+        <li>小组编号：<b>G1</b></li>
+        <li>专业班级：<b>计算机科学与技术专业 2025级1班</b></li>
+      </ul>
+      <table>
+        <caption>表：小组成员信息与分工</caption>
+        <tr>
+          <th>学号</th>
+          <th>姓名</th>
+          <th>分工</th>
+          <th>负责网页</th>
+          <th>综合设计报告</th>
+        </tr>
+        <tr>
+          <td>2025000001</td>
+          <td>张三</td>
+          <td>组长，首页与春季栏目</td>
+          <td><a href="page/spring.html">春 · 生</a>、<a href="page/qingming.html">清明</a></td>
+          <td><a href="document/2025000001张三.pdf" download>下载 PDF</a></td>
+        </tr>
+        <tr>
+          <td>2025000002</td>
+          <td>李四</td>
+          <td>夏季栏目</td>
+          <td><a href="page/summer.html">夏 · 长</a>、<a href="page/xiazhi.html">夏至</a></td>
+          <td><a href="document/2025000002李四.pdf" download>下载 PDF</a></td>
+        </tr>
+        <tr>
+          <td>2025000003</td>
+          <td>王五</td>
+          <td>秋季栏目</td>
+          <td><a href="page/autumn.html">秋 · 收</a>、<a href="page/qiufen.html">秋分</a></td>
+          <td><a href="document/2025000003王五.pdf" download>下载 PDF</a></td>
+        </tr>
+        <tr>
+          <td>2025000004</td>
+          <td>赵六</td>
+          <td>冬季栏目</td>
+          <td><a href="page/winter.html">冬 · 藏</a>、<a href="page/dongzhi.html">冬至</a></td>
+          <td><a href="document/2025000004赵六.pdf" download>下载 PDF</a></td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- 订阅表单 -->
+    <section>
+      <div class="section-title"><h2>订阅节气提醒</h2><span>Subscribe</span></div>
+      <div class="card">
+        <form onsubmit="return submitTip()">
+          <div class="two-col">
+            <div>
+              <p>
+                <label for="name">称呼</label>
+                <input type="text" id="name" name="name" placeholder="怎么称呼你？" required>
+              </p>
+              <p>
+                <label for="email">邮箱</label>
+                <input type="email" id="email" name="email" placeholder="name@example.com">
+              </p>
+              <p>
+                <label for="fav">最喜欢的季节</label>
+                <select id="fav" name="fav">
+                  <option value="spring">春</option>
+                  <option value="summer">夏</option>
+                  <option value="autumn">秋</option>
+                  <option value="winter">冬</option>
+                </select>
+              </p>
+            </div>
+            <div>
+              <p>
+                <label for="msg">给我们留言</label>
+                <textarea id="msg" name="msg" rows="6" placeholder="想看哪个节气的专题？欢迎告诉我们。"></textarea>
+              </p>
+              <p>
+                <label class="option"><input type="checkbox" name="agree" checked> 每个节气当天提醒我</label>
+              </p>
+            </div>
+          </div>
+          <p><input class="btn btn-solid" type="submit" value="订阅"> <input class="btn" type="reset" value="重置"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 页脚区 ========== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2025 拾光小组 · WebStation-G1 · 计算机科学与技术专业2025级1班</p>
+      <p>本页制作：2025000001 张三 ｜ <a href="index.html">返回首页</a> ｜ <a href="#top">回到顶部 ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
