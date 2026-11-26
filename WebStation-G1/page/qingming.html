@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025000001张三</title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <!-- 内部 CSS：只对本页生效的样式 -->
+  <style>
+    .tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+    .tags li { padding: 4px 14px; border-radius: 16px; background-color: #f6e3e7; color: #a04a60; font-size: 14px; }
+  </style>
+</head>
+<body class="spring" id="top">
+  <!-- ========== 标题区 ========== -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html">
+        <div class="seal">节气<br>手帖</div>
+        <div>
+          <h1>节气手帖</h1>
+          <p>二十四节气 · 资讯博客</p>
+        </div>
+      </a>
+      <div class="today" id="today">今日</div>
+    </div>
+  </header>
+
+  <!-- ========== 导航区 ========== -->
+  <nav class="site-nav">
+    <ul class="wrap">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="spring.html" class="active">春 · 生</a></li>
+        <li><a href="summer.html">夏 · 长</a></li>
+        <li><a href="autumn.html">秋 · 收</a></li>
+        <li><a href="winter.html">冬 · 藏</a></li>
+        <li><a href="../index.html#about">关于我们</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== 内容区 ========== -->
+  <main class="wrap">
+    <p class="breadcrumb"><a href="../index.html">首页</a> &gt; <a href="spring.html">春 · 生</a> &gt; 清明</p>
+
+    <div class="layout">
+      <!-- 左侧：正文 -->
+      <article class="article">
+        <header class="article-head">
+          <h1>清明</h1>
+          <p class="meta">春季第五个节气 ｜ 公历4月4日—6日 ｜ 撰稿：张三</p>
+        </header>
+
+        <ul class="tags">
+          <li>节气</li>
+          <li>传统节日</li>
+          <li>踏青</li>
+          <li>非物质文化遗产</li>
+        </ul>
+
+        <figure>
+          <img src="../image/qingming.svg" alt="清明插图：细雨、垂柳与风筝">
+          <figcaption>图：清明时节，细雨垂柳，纸鸢高飞</figcaption>
+        </figure>
+
+        <p>清明是二十四节气中的第五个节气。《岁时百问》中说：“万物生长此时，皆清洁而明净，故谓之清明。”这时气温回升，草木葱茏，天地间一派清新明朗的景象。</p>
+        <p>清明的特别之处在于，它既是一个节气，又是一个传统节日。人们在这一天祭扫先人、缅怀亲人，也会走出家门，到郊外踏青游春，感受春天的生机。</p>
+
+        <div class="poem">
+          清明时节雨纷纷，<br>
+          路上行人欲断魂。<br>
+          借问酒家何处有？<br>
+          牧童遥指杏花村。<br>
+          <cite>—— 唐 · 杜牧《清明》</cite>
+        </div>
+
+        <h2>清明习俗</h2>
+        <ol class="custom-list">
+          <li><strong>扫墓祭祖：</strong>为先人清扫墓地、献上鲜花，表达思念与敬意。</li>
+          <li><strong>踏青游春：</strong>春光正好，人们结伴到郊外散步、赏花。</li>
+          <li><strong>插柳戴柳：</strong>柳条易活，象征生命力，民间有“清明不戴柳，红颜成皓首”的说法。</li>
+          <li><strong>放风筝：</strong>清明前后风力适中，正是放风筝的好时候。</li>
+          <li><strong>吃青团：</strong>江南一带用艾草汁和糯米做成碧绿的青团，清香软糯。</li>
+        </ol>
+
+        <h2>清明的物候</h2>
+        <p>清明的三候是“<strong>桐始华</strong>、<strong>田鼠化为鴽</strong>、<strong>虹始见</strong>”：泡桐花开始绽放；喜阴的田鼠躲回洞中，喜爱阳光的鹌鹑类小鸟出来活动；雨后的天空开始出现彩虹。</p>
+        <p class="quote">清明前后，种瓜点豆。—— 农谚</p>
+        <p>这句农谚告诉我们，清明前后气温适宜、雨水充足，是种植瓜类和豆类的好时机。古人正是依靠节气来安排农事的。</p>
+      </article>
+
+      <!-- 右侧：侧栏 -->
+      <aside class="sidebar">
+        <a class="back-home" href="../index.html">← 返回首页</a>
+
+        <!-- 制作人信息：学号、姓名分别在两个单元格 -->
+        <div class="card maker">
+          <h3>本页制作人</h3>
+          <table>
+            <tr>
+              <th>学号</th>
+              <th>姓名</th>
+            </tr>
+            <tr>
+              <td>2025000001</td>
+              <td>张三</td>
+            </tr>
+          </table>
+          <a class="btn btn-solid" href="../document/2025000001张三.pdf" download>下载个人综合设计报告</a>
+        </div>
+
+        <div class="card">
+          <h3>清明寄语</h3>
+          <form onsubmit="return submitTip()">
+            <p>
+              <label for="nick">你的昵称</label>
+              <input type="text" id="nick" name="nick" placeholder="例如：踏青的人" required>
+            </p>
+            <p>
+              <label for="place">今年想去哪里踏青？</label>
+              <select id="place" name="place">
+                <option>城市公园</option>
+                <option>郊外山野</option>
+                <option>江南水乡</option>
+                <option>学校操场就很好</option>
+              </select>
+            </p>
+            <p>
+              <label for="words">写一句寄语</label>
+              <textarea id="words" name="words" rows="3" placeholder="写给春天，或写给远方的人……"></textarea>
+            </p>
+            <p><input class="btn btn-solid" type="submit" value="寄出"> <input class="btn" type="reset" value="重写"></p>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>四时之卷</h3>
+          <ul>
+            <li><a href="spring.html">春 · 生</a>（本页） · <a href="qingming.html">清明</a></li>
+            <li><a href="summer.html">夏 · 长</a> · <a href="xiazhi.html">夏至</a></li>
+            <li><a href="autumn.html">秋 · 收</a> · <a href="qiufen.html">秋分</a></li>
+            <li><a href="winter.html">冬 · 藏</a> · <a href="dongzhi.html">冬至</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ========== 页脚区 ========== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2025 拾光小组 · WebStation-G1 · 计算机科学与技术专业2025级1班</p>
+      <p>本页制作：2025000001 张三 ｜ <a href="../index.html">返回首页</a> ｜ <a href="#top">回到顶部 ↑</a></p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

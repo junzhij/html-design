@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#f6efe0"/>
+  <circle cx="160" cy="120" r="64" fill="#f0dcb2"/>
+  <defs>
+    <path id="g" d="M0 0 L-4 -40 C-45 -48 -70 -85 -60 -120 C-35 -110 -15 -118 0 -105 C15 -118 35 -110 60 -120 C70 -85 45 -48 4 -40 Z"/>
+  </defs>
+  <g>
+    <use href="#g" fill="#d9a23a" transform="translate(380 330) rotate(-20) scale(1.4)"/>
+    <use href="#g" fill="#e8bb4f" transform="translate(520 260) rotate(25) scale(1.1)"/>
+    <use href="#g" fill="#c8862a" transform="translate(620 390) rotate(60) scale(.9)"/>
+    <use href="#g" fill="#efc96a" transform="translate(250 400) rotate(-60) scale(.8)"/>
+    <use href="#g" fill="#d9a23a" transform="translate(690 200) rotate(-10) scale(.7)"/>
+    <use href="#g" fill="#e8bb4f" transform="translate(450 140) rotate(150) scale(.6)"/>
+  </g>
+  <g stroke="#a2701f" stroke-width="1.5" fill="none" opacity=".55">
+    <path d="M380 330 l-20 -150 M380 330 l20 -148 M380 330 l0 -150"/>
+  </g>
+  <g fill="none" stroke="#2c2a26" stroke-width="2" stroke-linecap="round">
+    <path d="M560 90 q8 -8 16 0 q8 -8 16 0"/>
+    <path d="M610 70 q6 -6 12 0 q6 -6 12 0"/>
+  </g>
+</svg>

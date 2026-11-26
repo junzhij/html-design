@@ -1,0 +1,575 @@
+/* =========================================================
+   节气手帖 · 公共样式表 (外部 CSS)
+   配色：宣纸米白 + 墨色 + 朱砂红，每个季节页面另有一个主题色
+   ========================================================= */
+
+/* ---------- 1. 颜色变量 ---------- */
+:root {
+  --paper: #f7f3ea;      /* 宣纸底色 */
+  --paper-dark: #efe7d6; /* 深一点的纸色 */
+  --ink: #2c2a26;        /* 墨色：正文 */
+  --ink-light: #6b6458;  /* 淡墨：说明文字 */
+  --line: #ddd2bd;       /* 细线 */
+  --seal: #b23a2a;       /* 朱砂红：印章 */
+  --accent: #b23a2a;     /* 主题色（各季节页面会覆盖） */
+}
+
+/* 四个季节的主题色：给 body 加上对应 class 即可 */
+.spring { --accent: #c0607a; }  /* 桃花粉 */
+.summer { --accent: #3a8a74; }  /* 荷叶绿 */
+.autumn { --accent: #b9812a; }  /* 银杏黄 */
+.winter { --accent: #48678a; }  /* 黛蓝 */
+
+/* ---------- 2. 基础元素 ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 页面内容的统一宽度 */
+.wrap {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ---------- 3. 标题区 header ---------- */
+.site-header {
+  padding: 28px 0 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--ink);
+}
+
+/* 朱红方印 logo（纯 CSS 实现） */
+.seal {
+  width: 56px;
+  height: 56px;
+  background-color: var(--seal);
+  color: #fff;
+  border-radius: 6px;
+  font-family: "Songti SC", "STSong", "SimSun", serif;
+  font-size: 22px;
+  line-height: 24px;
+  text-align: center;
+  padding-top: 4px;
+  box-shadow: inset 0 0 0 3px var(--seal), inset 0 0 0 5px #fff3;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 6px;
+}
+
+.brand p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-light);
+  letter-spacing: 3px;
+}
+
+/* 右侧日期 */
+.today {
+  text-align: right;
+  font-size: 14px;
+  color: var(--ink-light);
+}
+
+.today strong {
+  display: block;
+  font-size: 18px;
+  color: var(--seal);
+  font-family: "Songti SC", "STSong", "SimSun", serif;
+}
+
+/* ---------- 4. 导航区 nav ---------- */
+.site-nav {
+  background-color: var(--paper-dark);
+  border-bottom: 1px solid var(--line);
+  position: sticky;   /* 滚动时导航固定在顶部 */
+  top: 0;
+  z-index: 10;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  display: block;
+  padding: 12px 22px;
+  color: var(--ink);
+  letter-spacing: 2px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background-color: #fffaf0;
+}
+
+/* ---------- 5. 通用模块 ---------- */
+main {
+  padding: 40px 0 60px;
+}
+
+section {
+  margin-bottom: 56px;
+}
+
+/* 栏目标题：中文 + 英文小字 + 细线 */
+.section-title {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+  margin-bottom: 24px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.section-title h2::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  background-color: var(--accent);
+  transform: rotate(45deg) translateY(-4px);
+}
+
+.section-title span {
+  font-size: 12px;
+  color: var(--ink-light);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* 面包屑 */
+.breadcrumb {
+  font-size: 14px;
+  color: var(--ink-light);
+  margin-bottom: 20px;
+}
+
+/* 按钮 */
+.btn {
+  display: inline-block;
+  padding: 8px 22px;
+  border: 1px solid var(--accent);
+  border-radius: 20px;
+  color: var(--accent);
+  background-color: transparent;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.btn-solid {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.btn-solid:hover {
+  background-color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* 卡片 */
+.card {
+  background-color: #fffdf8;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px 24px;
+  margin-bottom: 24px;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+/* ---------- 6. 表格 ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fffdf8;
+  font-size: 15px;
+}
+
+th, td {
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  text-align: center;
+}
+
+th {
+  background-color: var(--paper-dark);
+  font-family: "Songti SC", "STSong", "SimSun", serif;
+  letter-spacing: 2px;
+}
+
+tbody tr:hover {
+  background-color: #fbf3e4;
+}
+
+caption {
+  caption-side: bottom;
+  padding-top: 8px;
+  font-size: 13px;
+  color: var(--ink-light);
+}
+
+/* 制作人信息表（每个页面都有） */
+.maker table {
+  margin-bottom: 14px;
+}
+
+.maker .btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* ---------- 7. 表单 ---------- */
+form p {
+  margin: 0 0 14px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: var(--ink-light);
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background-color: var(--paper);
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: #fff;
+}
+
+/* 单选、复选框所在的行 */
+.option {
+  display: block;
+  color: var(--ink);
+  font-size: 15px;
+  margin: 4px 0;
+  cursor: pointer;
+}
+
+.option input {
+  accent-color: var(--accent);
+  margin-right: 6px;
+}
+
+/* ---------- 8. 文章页布局：左正文 + 右侧栏 ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  align-items: start;
+}
+
+.article h2 {
+  font-size: 22px;
+  margin: 36px 0 12px;
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+}
+
+.article p {
+  text-indent: 2em;
+  margin: 0 0 14px;
+  text-align: justify;
+}
+
+.article-head h1 {
+  font-size: 34px;
+  margin: 0 0 6px;
+  letter-spacing: 8px;
+}
+
+.article-head .meta {
+  text-indent: 0;
+  font-size: 14px;
+  color: var(--ink-light);
+  margin: 0 0 24px;
+}
+
+figure {
+  margin: 24px 0;
+}
+
+figure img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+figcaption {
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-light);
+  margin-top: 8px;
+}
+
+/* 古诗：居中显示 */
+.poem {
+  margin: 28px auto;
+  padding: 24px 20px;
+  max-width: 420px;
+  text-align: center;
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", serif;
+  font-size: 20px;
+  letter-spacing: 4px;
+  line-height: 2;
+  background-color: #fffdf8;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: 4px;
+}
+
+.poem cite {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-size: 14px;
+  color: var(--seal);
+}
+
+/* 引用一句话 */
+.quote {
+  margin: 24px 0;
+  padding: 16px 24px;
+  background-color: var(--paper-dark);
+  border-radius: 4px;
+  font-family: "Kaiti SC", "STKaiti", "KaiTi", serif;
+  font-size: 18px;
+  color: var(--ink);
+}
+
+/* 有序列表：习俗 */
+.custom-list {
+  padding-left: 0;
+  list-style: none;
+  counter-reset: num;
+}
+
+.custom-list li {
+  counter-increment: num;
+  position: relative;
+  padding: 10px 0 10px 46px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.custom-list li::before {
+  content: counter(num);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: #fff;
+  font-size: 14px;
+}
+
+.custom-list strong {
+  color: var(--accent);
+}
+
+/* 节气卡片列表（季节总览页） */
+.term-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.term-list li {
+  background-color: #fffdf8;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 18px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.term-list li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(80, 60, 30, 0.1);
+}
+
+.term-list h3 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--accent);
+}
+
+.term-list .date {
+  font-size: 13px;
+  color: var(--ink-light);
+}
+
+.term-list p {
+  text-indent: 0;
+  margin: 6px 0 0;
+  font-size: 15px;
+}
+
+/* 侧栏 */
+.sidebar .card {
+  padding: 20px;
+}
+
+.back-home {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  border: 1px dashed var(--accent);
+  border-radius: 8px;
+  letter-spacing: 3px;
+  margin-bottom: 24px;
+}
+
+.back-home:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* ---------- 9. 页脚区 footer ---------- */
+.site-footer {
+  background-color: var(--ink);
+  color: #cfc6b4;
+  padding: 32px 0 24px;
+  font-size: 14px;
+}
+
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: #f0d9a8;
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+/* ---------- 10. 手机等小屏幕适配 ---------- */
+@media (max-width: 760px) {
+  .site-header .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .today {
+    text-align: left;
+  }
+
+  .site-nav a {
+    padding: 10px 12px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .term-list {
+    grid-template-columns: 1fr;
+  }
+
+  .article-head h1 {
+    font-size: 28px;
+  }
+}
